@@ -13,7 +13,7 @@ body .container {
   border-color: #FFC003;
   border-radius: 15px;
   padding: 2em;
-  margin-top: 2em;
+  margin-top: 1.2em;
 }
 
 h1 {
@@ -48,7 +48,7 @@ pre.CodeRay .constant {
 
 pre.CodeRay .instance-variable {
   color: #FCEA97;
-  
+
 }
 
 pre.CodeRay .keyword {
@@ -61,17 +61,17 @@ pre.CodeRay .symbol {
 
 pre.CodeRay .integer {
   color: #f77;
-  
+
 }
 
 pre.CodeRay .comment {
   color: #777;
-  
+
 }
 
 pre.CodeRay .comment {
   color: #8D1D19;
-  
+
 }
 
 div.logo {
