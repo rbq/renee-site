@@ -1,15 +1,3 @@
-PATH
-  remote: ../renee
-  specs:
-    renee (0.0.1)
-      renee-core (= 0.0.1)
-      renee-render (= 0.0.1)
-    renee-core (0.0.1)
-      rack (~> 1.3.0)
-    renee-render (0.0.1)
-      rack (~> 1.3.0)
-      tilt (~> 1.3.3)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -21,6 +9,14 @@ GEM
       nokogiri (>= 1.4.1)
       rack (>= 1.0.0)
     rdiscount (1.6.8)
+    renee (0.0.1)
+      renee-core (= 0.0.1)
+      renee-render (= 0.0.1)
+    renee-core (0.0.1)
+      rack (~> 1.3.0)
+    renee-render (0.0.1)
+      rack (~> 1.3.0)
+      tilt (~> 1.3.3)
     shotgun (0.9)
       rack (>= 1.0)
     tilt (1.3.3)
@@ -33,5 +29,5 @@ DEPENDENCIES
   haml
   rack-codehighlighter
   rdiscount
-  renee!
+  renee
   shotgun

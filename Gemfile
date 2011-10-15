@@ -1,12 +1,12 @@
 source :rubygems
 
-if File.exist?('../renee')
-  gem 'renee', :path => '../renee'
-else
-  gem 'renee'
-end
-gem 'shotgun'
+
+gem 'renee'
 gem 'rdiscount'
 gem 'haml'
 gem 'rack-codehighlighter'
 gem 'coderay'
+
+group :development do
+  gem 'shotgun'
+end
