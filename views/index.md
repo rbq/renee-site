@@ -9,10 +9,16 @@
 
 This site was been built using Renee and is [available on Github](https://github.com/renee-project/renee-site).
 
-## Concept
+## Concept (Why Renee?)
 
-Renee is a Rack-based DSL for expressing web applications. It seamlessly integrates with Rack to
-let you mix and match with any other framework.
+Renee is a new Rack-based library for expressing web applications. It seamlessly integrates with Rack to
+let you mix and match with any other framework. Sinatra delivered a new simple way to think about
+building web applications. The popularity of Sinatra both as a library and as a concept shows how enduring the
+concept really has been.
+
+Sinatra was different from Rails because the DSL was lightweight, easy to read and
+combined routing and actions into one file. Still, let's consider an example from Sinatra to see where
+we can do better.
 
 [&#8618; Read more](/concept)
 

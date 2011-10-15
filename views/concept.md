@@ -1,6 +1,6 @@
 # Concept
 
-Renee is a new Rack-based library for describing web applications. Sinatra delivered a new simple way to think about
+Renee is a new Rack-based library for expressing web applications. Sinatra delivered a new simple way to think about
 building web applications. The popularity of Sinatra both as a library and as a concept shows how enduring the
 concept really has been.
 
