@@ -13,7 +13,7 @@ require the path to be entirely consumed before sending a response.
 
 ### `Symbol`
 
-If it's a symbol, it will attempt to look it up in `Renee::Core::Application::Responding::HTTP_CODES`.
+If it's a symbol, it will attempt to look it up in [`Renee::Core::Application::Responding::HTTP_CODES`](http://reneerb.com/doc/core/Renee/Core/Application/Responding.html).
 
     :::ruby
     # Return status with symbol
