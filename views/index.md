@@ -7,6 +7,8 @@
       path('/') { halt "Hello Renee!" }
     }
 
+This site was been built using Renee and is [available on Github](https://github.com/renee-project/renee-site).
+
 ## Concept
 
 Renee is a Rack-based DSL for expressing web applications. It seamlessly integrates with Rack to
