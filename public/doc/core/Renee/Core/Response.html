@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Renee::Core::Response
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../../Renee.html" title="Renee (class)">Renee</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Core.html" title="Renee::Core (class)">Core</a></span></span>
+     &raquo; 
+    <span class="title">Response</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Renee::Core::Response
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Rack::Response</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Rack::Response</li>
+          
+            <li class="next">Renee::Core::Response</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/renee-core/response.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>The response object for a Renee request. Inherits from the <code>Rack#Response</code> object.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+  
+
+
+  
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body-instance_method" title="#body (instance method)">- (Object) <strong>body</strong>(val = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get or set the body of the response.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body%3D-instance_method" title="#body= (instance method)">- (Object) <strong>body=</strong>(value) </a>
+    
+
+    
+      (also: #body_attr=)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Augment body to allow strings.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#body_attr-instance_method" title="#body_attr (instance method)">- (Object) <strong>body_attr</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#finish-instance_method" title="#finish (instance method)">- (Object) <strong>finish</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Finishs the response based on the accumulated options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#headers-instance_method" title="#headers (instance method)">- (Object) <strong>headers</strong>(attrs = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get or set the headers of the response.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#status-instance_method" title="#status (instance method)">- (Object) <strong>status</strong>(val = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Get or set the status of the response.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#status_attr-instance_method" title="#status_attr (instance method)">- (Object) <strong>status_attr</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Alias status and body methods to allow redefinition.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="body-instance_method">
+  
+    - (<tt>Object</tt>) <strong>body</strong>(val = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Get or set the body of the response.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code">res.body &quot;hello&quot;
+res.body =&gt; &quot;hello&quot;</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>val</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The contents to return.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+46
+47
+48</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 46</span>
+
+<span class='kw'>def</span> <span class='id body'>body</span><span class='lparen'>(</span><span class='id val'>val</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id val'>val</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id body_attr'>body_attr</span> <span class='op'>=</span> <span class='id val'>val</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id body_attr'>body_attr</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="body=-instance_method">
+  
+    - (<tt>Object</tt>) <strong>body=</strong>(value) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='body_attr=-instance_method'>body_attr=</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Augment body to allow strings.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id res'>res</span><span class='period'>.</span><span class='id body'>body</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Hello</span><span class='tstring_end'>&quot;</span></span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>The</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>contents for the response.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+13
+14
+15
+16</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 13</span>
+
+<span class='kw'>def</span> <span class='id body='>body=</span><span class='lparen'>(</span><span class='id value'>value</span><span class='rparen'>)</span>
+  <span class='id value'>value</span> <span class='op'>=</span> <span class='id value'>value</span><span class='period'>.</span><span class='id body'>body</span> <span class='kw'>while</span> <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Response</span> <span class='op'>===</span> <span class='id value'>value</span>
+  <span class='ivar'>@body</span> <span class='op'>=</span> <span class='const'>String</span> <span class='op'>===</span> <span class='id value'>value</span> <span class='op'>?</span> <span class='lbracket'>[</span><span class='id value'>value</span><span class='period'>.</span><span class='id to_str'>to_str</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id value'>value</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="body_attr-instance_method">
+  
+    - (<tt>Object</tt>) <strong>body_attr</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 21</span>
+
+<span class='kw'>alias</span> <span class='symbol'>:body_attr</span>  <span class='symbol'>:body</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="finish-instance_method">
+  
+    - (<tt>Object</tt>) <strong>finish</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Finishs the response based on the accumulated options.
+Calculates the size of the body content length and removes headers for 1xx status codes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 65</span>
+
+<span class='kw'>def</span> <span class='id finish'>finish</span>
+  <span class='kw'>if</span> <span class='id status'>status</span><span class='period'>.</span><span class='id to_i'>to_i</span> <span class='op'>/</span> <span class='int'>100</span> <span class='op'>==</span> <span class='int'>1</span>
+    <span class='id headers'>headers</span><span class='period'>.</span><span class='id delete'>delete</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Length</span><span class='tstring_end'>&quot;</span></span>
+    <span class='id headers'>headers</span><span class='period'>.</span><span class='id delete'>delete</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Type</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>elsif</span> <span class='const'>Array</span> <span class='op'>===</span> <span class='id body'>body</span> <span class='kw'>and</span> <span class='kw'>not</span> <span class='lbracket'>[</span><span class='int'>204</span><span class='comma'>,</span> <span class='int'>304</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id status'>status</span><span class='period'>.</span><span class='id to_i'>to_i</span><span class='rparen'>)</span>
+    <span class='id headers'>headers</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Content-Length</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id body'>body</span><span class='period'>.</span><span class='id inject'>inject</span><span class='lparen'>(</span><span class='int'>0</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id l'>l</span><span class='comma'>,</span> <span class='id p'>p</span><span class='op'>|</span> <span class='id l'>l</span> <span class='op'>+</span> <span class='const'>Rack</span><span class='op'>::</span><span class='const'>Utils</span><span class='period'>.</span><span class='id bytesize'>bytesize</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span> <span class='rbrace'>}</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='kw'>end</span>
+
+  <span class='id status'>status</span><span class='comma'>,</span> <span class='id headers'>headers</span><span class='comma'>,</span> <span class='id result'>result</span> <span class='op'>=</span> <span class='kw'>super</span>
+  <span class='lbracket'>[</span><span class='id status'>status</span><span class='comma'>,</span> <span class='id headers'>headers</span><span class='comma'>,</span> <span class='id result'>result</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="headers-instance_method">
+  
+    - (<tt>Object</tt>) <strong>headers</strong>(attrs = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Get or set the headers of the response.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code">res.headers :foo =&gt; &quot;bar&quot;
+res.headers =&gt; { :foo =&gt; &quot;bar&quot; }</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>attrs</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The contents to return.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 59</span>
+
+<span class='kw'>def</span> <span class='id headers'>headers</span><span class='lparen'>(</span><span class='id attrs'>attrs</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id attrs'>attrs</span> <span class='op'>?</span> <span class='id attrs'>attrs</span><span class='period'>.</span><span class='id each'>each</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id k'>k</span><span class='comma'>,</span> <span class='id v'>v</span><span class='op'>|</span> <span class='kw'>self</span><span class='lbracket'>[</span><span class='id k'>k</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id v'>v</span> <span class='rbrace'>}</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id header'>header</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="status-instance_method">
+  
+    - (<tt>Object</tt>) <strong>status</strong>(val = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Get or set the status of the response.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code">res.status 400
+res.status =&gt; 400</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>val</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The status code to return.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+33
+34
+35</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 33</span>
+
+<span class='kw'>def</span> <span class='id status'>status</span><span class='lparen'>(</span><span class='id val'>val</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id val'>val</span> <span class='op'>?</span> <span class='kw'>self</span><span class='period'>.</span><span class='id status_attr'>status_attr</span> <span class='op'>=</span> <span class='id val'>val</span> <span class='op'>:</span> <span class='kw'>self</span><span class='period'>.</span><span class='id status_attr'>status_attr</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="status_attr-instance_method">
+  
+    - (<tt>Object</tt>) <strong>status_attr</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Alias status and body methods to allow redefinition</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/response.rb', line 19</span>
+
+<span class='kw'>alias</span> <span class='symbol'>:status_attr</span> <span class='symbol'>:status</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Oct 14 18:23:56 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

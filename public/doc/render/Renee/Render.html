@@ -1,0 +1,899 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Renee::Render
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Renee.html" title="Renee (class)">Renee</a></span></span>
+     &raquo; 
+    <span class="title">Render</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Renee::Render
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/renee-render.rb<span class="defines">,<br />
+  lib/renee-render/version.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>This module is responsible for handling the rendering of templates
+using Tilt supporting all included template engines.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+   
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Render/RenderError.html" title="Renee::Render::RenderError (class)">RenderError</a></span>, <span class='object_link'><a href="Render/TemplateNotFound.html" title="Renee::Render::TemplateNotFound (class)">TemplateNotFound</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          <div class="docstring">
+  <div class="discussion">
+    <p>The version for the renee-render gem.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.0.1</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+    </dl>
+  
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#compile_template-instance_method" title="#compile_template (instance method)">- (Tilt::Template) <strong>compile_template</strong>(engine, data, options, views) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  <span class="private note title">Private</span>
+
+  
+    <span class="summary_desc"><div class='inline'><p>Constructs a template based on engine, data and options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_template-instance_method" title="#find_template (instance method)">- (&lt;String, Symbol&gt;) <strong>find_template</strong>(views, name, engine = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  <span class="private note title">Private</span>
+
+  
+    <span class="summary_desc"><div class='inline'><p>Searches view paths for template based on data and engine with rendering options.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render-instance_method" title="#render (instance method)">- (String) <strong>render</strong>(engine, data = nil, options = {}, &amp;block) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Renders a string given the engine and the content.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#render%21-instance_method" title="#render! (instance method)">- (String) <strong>render!</strong>(*args, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Same as render but automatically halts.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#template_cache-instance_method" title="#template_cache (instance method)">- (Object) <strong>template_cache</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Maintain Tilt::Cache of the templates.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="compile_template-instance_method">
+  
+    - (<tt>Tilt::Template</tt>) <strong>compile_template</strong>(engine, data, options, views) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p class="note private">
+  <strong>This method is part of a private API.</strong> 
+  You should avoid using this method if possible, as it may be removed or be changed in the future.
+</p>
+<p>Constructs a template based on engine, data and options.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>engine</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The template engine to use for rendering.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The content or file to render.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The rendering options to pass onto tilt.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>views</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The view_path from which to locate the template.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Tilt::Template</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The tilt template to render with all required options.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Raises:</h3>
+<ul class="raise">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Render/TemplateNotFound.html" title="Renee::Render::TemplateNotFound (class)">TemplateNotFound</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The template to render could not be located.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Render/RenderError.html" title="Renee::Render::RenderError (class)">RenderError</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The template to render could not be located.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-render.rb', line 85</span>
+
+<span class='kw'>def</span> <span class='id compile_template'>compile_template</span><span class='lparen'>(</span><span class='id engine'>engine</span><span class='comma'>,</span> <span class='id data'>data</span><span class='comma'>,</span> <span class='id options'>options</span><span class='comma'>,</span> <span class='id views'>views</span><span class='rparen'>)</span>
+  <span class='id template_cache'>template_cache</span><span class='period'>.</span><span class='id fetch'>fetch</span> <span class='id engine'>engine</span><span class='comma'>,</span> <span class='id data'>data</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='kw'>do</span>
+    <span class='kw'>if</span> <span class='id data'>data</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Symbol</span><span class='rparen'>)</span> <span class='comment'># data is template path
+</span>      <span class='id file_path'>file_path</span><span class='comma'>,</span> <span class='id engine'>engine</span> <span class='op'>=</span> <span class='id find_template'>find_template</span><span class='lparen'>(</span><span class='id views'>views</span><span class='comma'>,</span> <span class='id data'>data</span><span class='comma'>,</span> <span class='id engine'>engine</span><span class='rparen'>)</span>
+      <span class='id template'>template</span> <span class='op'>=</span> <span class='const'>Tilt</span><span class='lbracket'>[</span><span class='id engine'>engine</span><span class='rbracket'>]</span>
+      <span class='id raise'>raise</span> <span class='const'>TemplateNotFound</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Template engine not found: </span><span class='embexpr_beg'>#{</span><span class='id engine'>engine</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id template'>template</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+      <span class='id raise'>raise</span> <span class='const'>TemplateNotFound</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Template '</span><span class='embexpr_beg'>#{</span><span class='id data'>data</span><span class='rbrace'>}</span><span class='tstring_content'>' not found in '</span><span class='embexpr_beg'>#{</span><span class='id views'>views</span><span class='rbrace'>}</span><span class='tstring_content'>'!</span><span class='tstring_end'>&quot;</span></span>  <span class='kw'>unless</span> <span class='id file_path'>file_path</span>
+      <span class='comment'># TODO suppress errors for layouts?
+</span>      <span class='id template'>template</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id file_path'>file_path</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='id data'>data</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='comment'># data is body string
+</span>      <span class='comment'># TODO figure out path based on caller file
+</span>      <span class='id path'>path</span><span class='comma'>,</span> <span class='id line'>line</span>  <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:path</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>caller file</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:line</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='int'>1</span>
+      <span class='id body'>body</span> <span class='op'>=</span> <span class='id data'>data</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='const'>Proc</span><span class='period'>.</span><span class='id new'>new</span> <span class='lbrace'>{</span> <span class='id data'>data</span> <span class='rbrace'>}</span> <span class='op'>:</span> <span class='id data'>data</span>
+      <span class='id template'>template</span> <span class='op'>=</span> <span class='const'>Tilt</span><span class='lbracket'>[</span><span class='id engine'>engine</span><span class='rbracket'>]</span>
+      <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Template engine not found: </span><span class='embexpr_beg'>#{</span><span class='id engine'>engine</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='id template'>template</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+      <span class='id template'>template</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id path'>path</span><span class='comma'>,</span> <span class='id line'>line</span><span class='period'>.</span><span class='id to_i'>to_i</span><span class='comma'>,</span> <span class='id options'>options</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id body'>body</span><span class='rparen'>)</span>
+    <span class='kw'>else</span> <span class='comment'># data can't be handled
+</span>      <span class='id raise'>raise</span> <span class='const'>RenderError</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Cannot render data </span><span class='embexpr_beg'>#{</span><span class='id data'>data</span><span class='period'>.</span><span class='id inspect'>inspect</span><span class='rbrace'>}</span><span class='tstring_content'>.</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span> <span class='comment'># template_cache.fetch
+</span><span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="find_template-instance_method">
+  
+    - (<tt>&lt;String, Symbol&gt;</tt>) <strong>find_template</strong>(views, name, engine = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p class="note private">
+  <strong>This method is part of a private API.</strong> 
+  You should avoid using this method if possible, as it may be removed or be changed in the future.
+</p>
+<p>Searches view paths for template based on data and engine with rendering options.
+Supports finding a template without an engine.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code">find_template(&quot;./views&quot;, &quot;index&quot;, :erb) =&gt; [&quot;path/to/index.erb&quot;, :erb]
+find_template(&quot;./views&quot;, &quot;foo&quot;)         =&gt; [&quot;path/to/index.haml&quot;, :haml]</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>views</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The view paths</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>name</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The name of the template</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>engine</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The engine to use for rendering.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>&lt;String, Symbol&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>An array of the file path and the engine.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+123
+124
+125
+126
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-render.rb', line 123</span>
+
+<span class='kw'>def</span> <span class='id find_template'>find_template</span><span class='lparen'>(</span><span class='id views'>views</span><span class='comma'>,</span> <span class='id name'>name</span><span class='comma'>,</span> <span class='id engine'>engine</span><span class='op'>=</span><span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id lookup_ext'>lookup_ext</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id engine'>engine</span> <span class='op'>||</span> <span class='const'>File</span><span class='period'>.</span><span class='id extname'>extname</span><span class='lparen'>(</span><span class='id name'>name</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>*</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='period'>.</span><span class='id to_s'>to_s</span>
+  <span class='id base_name'>base_name</span> <span class='op'>=</span> <span class='id name'>name</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id chomp'>chomp</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id lookup_ext'>lookup_ext</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='id file_path'>file_path</span> <span class='op'>=</span> <span class='const'>Dir</span><span class='lbracket'>[</span><span class='const'>File</span><span class='period'>.</span><span class='id join'>join</span><span class='lparen'>(</span><span class='id views'>views</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id base_name'>base_name</span><span class='rbrace'>}</span><span class='tstring_content'>.</span><span class='embexpr_beg'>#{</span><span class='id lookup_ext'>lookup_ext</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id first'>first</span>
+  <span class='id engine'>engine</span> <span class='op'>||=</span> <span class='const'>File</span><span class='period'>.</span><span class='id extname'>extname</span><span class='lparen'>(</span><span class='id file_path'>file_path</span><span class='rparen'>)</span><span class='lbracket'>[</span><span class='int'>1</span><span class='op'>..</span><span class='op'>-</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id to_sym'>to_sym</span> <span class='kw'>if</span> <span class='id file_path'>file_path</span>
+  <span class='lbracket'>[</span><span class='id file_path'>file_path</span><span class='comma'>,</span> <span class='id engine'>engine</span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="render-instance_method">
+  
+    - (<tt>String</tt>) <strong>render</strong>(engine, data = nil, options = {}, &amp;block) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Renders a string given the engine and the content.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id render'>render</span> <span class='symbol'>:haml</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>%p test</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;p&gt;test&lt;/p&gt;</span><span class='tstring_end'>&quot;</span></span>
+<span class='id render'>render</span> <span class='symbol'>:haml</span><span class='comma'>,</span> <span class='symbol'>:index</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;p&gt;test&lt;/p&gt;</span><span class='tstring_end'>&quot;</span></span>
+<span class='id render'>render</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>index</span><span class='tstring_end'>&quot;</span></span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>&lt;p&gt;test&lt;/p&gt;</span><span class='tstring_end'>&quot;</span></span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>engine</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The template engine to use for rendering.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>nil</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The content or file to render.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>The rendering options to pass onto tilt.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The result of rendering the data with specified engine.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-render.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id render'>render</span><span class='lparen'>(</span><span class='id engine'>engine</span><span class='comma'>,</span> <span class='id data'>data</span><span class='op'>=</span><span class='kw'>nil</span><span class='comma'>,</span> <span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+  <span class='comment'># Handles the case where engine is unspecified by shifting the data (i.e render &quot;index&quot;)
+</span>  <span class='id engine'>engine</span><span class='comma'>,</span> <span class='id data'>data</span><span class='comma'>,</span> <span class='id options'>options</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='comma'>,</span> <span class='id engine'>engine</span><span class='period'>.</span><span class='id to_sym'>to_sym</span><span class='comma'>,</span> <span class='id data'>data</span> <span class='kw'>if</span> <span class='id data'>data</span><span class='period'>.</span><span class='id nil?'>nil?</span> <span class='op'>||</span> <span class='id data'>data</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+
+  <span class='id options'>options</span>                    <span class='op'>||=</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:outvar</span><span class='rbracket'>]</span>           <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>@_out_buf</span><span class='tstring_end'>'</span></span>
+  <span class='comment'># TODO allow default encoding to be set (as an option)
+</span>  <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:default_encoding</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>utf-8</span><span class='tstring_end'>&quot;</span></span>
+
+  <span class='id locals'>locals</span>         <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:locals</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='lbrace'>{</span><span class='rbrace'>}</span>
+  <span class='id views'>views</span>          <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:views</span><span class='rparen'>)</span>  <span class='op'>||</span> <span class='id settings'>settings</span><span class='period'>.</span><span class='id views_path'>views_path</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./views</span><span class='tstring_end'>&quot;</span></span>
+  <span class='id layout'>layout</span>         <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:layout</span><span class='rparen'>)</span>
+  <span class='id layout_engine'>layout_engine</span>  <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:layout_engine</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id engine'>engine</span>
+  <span class='comment'># TODO suppress template errors for layouts?
+</span>  <span class='comment'># TODO allow content_type to be set with an option to render?
+</span>  <span class='id scope'>scope</span>          <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id delete'>delete</span><span class='lparen'>(</span><span class='symbol'>:scope</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='kw'>self</span>
+
+  <span class='comment'># TODO default layout file convention?
+</span>  <span class='id template'>template</span>       <span class='op'>=</span> <span class='id compile_template'>compile_template</span><span class='lparen'>(</span><span class='id engine'>engine</span><span class='comma'>,</span> <span class='id data'>data</span><span class='comma'>,</span> <span class='id options'>options</span><span class='comma'>,</span> <span class='id views'>views</span><span class='rparen'>)</span>
+  <span class='id output'>output</span>         <span class='op'>=</span> <span class='id template'>template</span><span class='period'>.</span><span class='id render'>render</span><span class='lparen'>(</span><span class='id scope'>scope</span><span class='comma'>,</span> <span class='id locals'>locals</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id block'>block</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id layout'>layout</span> <span class='comment'># render layout
+</span>    <span class='comment'># TODO handle when layout is missing better!
+</span>    <span class='id options'>options</span> <span class='op'>=</span> <span class='id options'>options</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='symbol'>:views</span> <span class='op'>=&gt;</span> <span class='id views'>views</span><span class='comma'>,</span> <span class='symbol'>:layout</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='comma'>,</span> <span class='symbol'>:scope</span> <span class='op'>=&gt;</span> <span class='id scope'>scope</span><span class='rparen'>)</span>
+    <span class='kw'>return</span> <span class='id render'>render</span><span class='lparen'>(</span><span class='id layout_engine'>layout_engine</span><span class='comma'>,</span> <span class='id layout'>layout</span><span class='comma'>,</span> <span class='id options'>options</span><span class='period'>.</span><span class='id merge'>merge</span><span class='lparen'>(</span><span class='symbol'>:locals</span> <span class='op'>=&gt;</span> <span class='id locals'>locals</span><span class='rparen'>)</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id output'>output</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+
+  <span class='id output'>output</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="render!-instance_method">
+  
+    - (<tt>String</tt>) <strong>render!</strong>(*args, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Same as render but automatically halts.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>engine</span>
+      
+      
+        <span class='type'>(<tt>Symbol</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The template engine to use for rendering.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>data</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The content or file to render.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The rendering options to pass onto tilt.</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The result of rendering the data with specified engine.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#render-instance_method" title="Renee::Render#render (method)">#render</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-render.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id render!'>render!</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='id halt'>halt</span> <span class='id render'>render</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="template_cache-instance_method">
+  
+    - (<tt>Object</tt>) <strong>template_cache</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Maintain Tilt::Cache of the templates.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-render.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id template_cache'>template_cache</span>
+  <span class='ivar'>@template_cache</span> <span class='op'>||=</span> <span class='const'>Tilt</span><span class='op'>::</span><span class='const'>Cache</span><span class='period'>.</span><span class='id new'>new</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Oct 14 18:23:58 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

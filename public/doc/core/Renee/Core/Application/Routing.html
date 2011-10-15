@@ -1,0 +1,1378 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Renee::Core::Application::Routing
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="../../../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../../../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '../../..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../../../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../../../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../../../Renee.html" title="Renee (class)">Renee</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../../Core.html" title="Renee::Core (class)">Core</a></span></span> &raquo; <span class='title'><span class='object_link'><a href="../Application.html" title="Renee::Core::Application (class)">Application</a></span></span>
+     &raquo; 
+    <span class="title">Routing</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Renee::Core::Application::Routing
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+    <dt class="r1">Included in:</dt>
+    <dd class="r1"><span class='object_link'><a href="../Application.html" title="Renee::Core::Application (class)">Renee::Core::Application</a></span></dd>
+    
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/renee-core/application/routing.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Collection of useful methods for routing within a <span class='object_link'><a href="../../Core.html" title="Renee::Core (class)">Renee::Core</a></span> app.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div>
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#complete-instance_method" title="#complete (instance method)">- (Object) <strong>complete</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match only when the path has been completely consumed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#delete-instance_method" title="#delete (instance method)">- (Object) <strong>delete</strong>(path = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Respond to a DELETE request and yield the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#exact_path-instance_method" title="#exact_path (instance method)">- (Object) <strong>exact_path</strong>(p, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Like #path, but doesn't automatically match trailing-slashes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#extension-instance_method" title="#extension (instance method)">- (Object) <strong>extension</strong>(ext) </a>
+    
+
+    
+      (also: #ext)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match an extension.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get-instance_method" title="#get (instance method)">- (Object) <strong>get</strong>(path = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Respond to a GET request and yield the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#no_extension-instance_method" title="#no_extension (instance method)">- (Object) <strong>no_extension</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match no extension.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#part-instance_method" title="#part (instance method)">- (Object) <strong>part</strong>(p) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Like #path, doesn't look for leading slashes.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#partial_variable-instance_method" title="#partial_variable (instance method)">- (Object) <strong>partial_variable</strong>(*args, &amp;blk) </a>
+    
+
+    
+      (also: #part_var)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match parts off the path as variables without a leading slash.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#path-instance_method" title="#path (instance method)">- (Object) <strong>path</strong>(p, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match a path to respond to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#post-instance_method" title="#post (instance method)">- (Object) <strong>post</strong>(path = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Respond to a POST request and yield the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#put-instance_method" title="#put (instance method)">- (Object) <strong>put</strong>(path = nil) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Respond to a PUT request and yield the block.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#query-instance_method" title="#query (instance method)">- (Object) <strong>query</strong>(q, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match variables within the query string.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#query_string-instance_method" title="#query_string (instance method)">- (Object) <strong>query_string</strong>(qs) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Yield block if the query string matches.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#remainder-instance_method" title="#remainder (instance method)">- (Object) <strong>remainder</strong> </a>
+    
+
+    
+      (also: #catchall)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match any remaining path.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#variable-instance_method" title="#variable (instance method)">- (Object) <strong>variable</strong>(*args, &amp;blk) </a>
+    
+
+    
+      (also: #var)
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Match parts off the path as variables.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#whole_path-instance_method" title="#whole_path (instance method)">- (Object) <strong>whole_path</strong>(p, &amp;blk) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Like #path, but requires the entire path to be consumed.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="complete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>complete</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match only when the path has been completely consumed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id delete'>delete</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+173
+174
+175</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 173</span>
+
+<span class='kw'>def</span> <span class='id complete'>complete</span>
+  <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span> <span class='kw'>if</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span> <span class='op'>||</span> <span class='id is_index_request'>is_index_request</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="delete-instance_method">
+  
+    - (<tt>Object</tt>) <strong>delete</strong>(path = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Respond to a DELETE request and yield the block.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id delete'>delete</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+163
+164
+165</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 163</span>
+
+<span class='kw'>def</span> <span class='id delete'>delete</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>DELETE</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="exact_path-instance_method">
+  
+    - (<tt>Object</tt>) <strong>exact_path</strong>(p, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Like #path, but doesn't automatically match trailing-slashes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#path-instance_method" title="Renee::Core::Application::Routing#path (method)">#path</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id exact_path'>exact_path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='id p'>p</span> <span class='op'>=</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='id part'>part</span><span class='period'>.</span><span class='id size'>size</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='CHAR'>?/</span>
+  <span class='id part'>part</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\/</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="extension-instance_method">
+  
+    - (<tt>Object</tt>) <strong>extension</strong>(ext) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='ext-instance_method'>ext</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match an extension.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id extension'>extension</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>html</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id path'>path</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id path'>path</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+96
+97
+98
+99
+100
+101
+102
+103</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 96</span>
+
+<span class='kw'>def</span> <span class='id extension'>extension</span><span class='lparen'>(</span><span class='id ext'>ext</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id detected_extension'>detected_extension</span> <span class='op'>&amp;&amp;</span> <span class='id match'>match</span> <span class='op'>=</span> <span class='id detected_extension'>detected_extension</span><span class='lbracket'>[</span><span class='id ext'>ext</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id match'>match</span> <span class='op'>==</span> <span class='id detected_extension'>detected_extension</span>
+      <span class='lparen'>(</span><span class='id ext_match'>ext_match</span> <span class='op'>=</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/?\.</span><span class='embexpr_beg'>#{</span><span class='id match'>match</span><span class='rbrace'>}</span><span class='regexp_end'>/</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='op'>?</span>
+        <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id ext_match'>ext_match</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span> <span class='op'>:</span> <span class='kw'>yield</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get</strong>(path = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Respond to a GET request and yield the block.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id get'>get</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+133
+134
+135</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 133</span>
+
+<span class='kw'>def</span> <span class='id get'>get</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>GET</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="no_extension-instance_method">
+  
+    - (<tt>Object</tt>) <strong>no_extension</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match no extension.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id no_extension'>no_extension</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id path'>path</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id path'>path</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 112</span>
+
+<span class='kw'>def</span> <span class='id no_extension'>no_extension</span>
+  <span class='kw'>yield</span> <span class='kw'>if</span> <span class='id detected_extension'>detected_extension</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="part-instance_method">
+  
+    - (<tt>Object</tt>) <strong>part</strong>(p) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Like #path, doesn't look for leading slashes.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+41
+42
+43
+44
+45
+46</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 41</span>
+
+<span class='kw'>def</span> <span class='id part'>part</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span>
+  <span class='id p'>p</span> <span class='op'>=</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\/?</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='regexp_end'>/</span></span> <span class='kw'>if</span> <span class='id p'>p</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>String</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id match'>match</span> <span class='op'>=</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='id p'>p</span><span class='rbracket'>]</span>
+    <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id match'>match</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="partial_variable-instance_method">
+  
+    - (<tt>Object</tt>) <strong>partial_variable</strong>(*args, &amp;blk) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='part_var-instance_method'>part_var</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match parts off the path as variables without a leading slash.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#variable-instance_method" title="Renee::Core::Application::Routing#variable (method)">#variable</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 72</span>
+
+<span class='kw'>def</span> <span class='id partial_variable'>partial_variable</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='id opts'>opts</span> <span class='op'>=</span> <span class='id args'>args</span><span class='period'>.</span><span class='id last'>last</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span> <span class='op'>?</span> <span class='id args'>args</span><span class='period'>.</span><span class='id pop'>pop</span> <span class='op'>:</span> <span class='kw'>nil</span>
+  <span class='id type'>type</span> <span class='op'>=</span> <span class='id args'>args</span><span class='period'>.</span><span class='id first'>first</span> <span class='op'>||</span> <span class='id opts'>opts</span> <span class='op'>&amp;&amp;</span> <span class='id opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:type</span><span class='rbracket'>]</span>
+  <span class='id prepend'>prepend</span> <span class='op'>=</span> <span class='id opts'>opts</span> <span class='op'>&amp;&amp;</span> <span class='id opts'>opts</span><span class='lbracket'>[</span><span class='symbol'>:prepend</span><span class='rbracket'>]</span> <span class='op'>||</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span>
+  <span class='kw'>if</span> <span class='id type'>type</span> <span class='op'>==</span> <span class='const'>Integer</span>
+    <span class='id complex_variable'>complex_variable</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id prepend'>prepend</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>(\d+)</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='id proc'>proc</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id v'>v</span><span class='op'>|</span> <span class='const'>Integer</span><span class='lparen'>(</span><span class='id v'>v</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='kw'>else</span> <span class='kw'>case</span> <span class='id type'>type</span>
+    <span class='kw'>when</span> <span class='kw'>nil</span>
+      <span class='id complex_variable'>complex_variable</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id prepend'>prepend</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>([^\/]+)</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='const'>Regexp</span>
+      <span class='id complex_variable'>complex_variable</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id prepend'>prepend</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>(</span><span class='embexpr_beg'>#{</span><span class='id type'>type</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbrace'>}</span><span class='tstring_content'>)</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+      <span class='id raise'>raise</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unexpected variable type </span><span class='embexpr_beg'>#{</span><span class='id type'>type</span><span class='period'>.</span><span class='id inspect'>inspect</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="path-instance_method">
+  
+    - (<tt>Object</tt>) <strong>path</strong>(p, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match a path to respond to.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code">path('/')    { ... } #=&gt; '/'
+path('test') { ... } #=&gt; '/test'
+
+path 'foo' do
+  path('bar') { ... } #=&gt; '/foo/bar'
+end</pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>p</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>path to match.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>blk</span>
+      
+      
+        <span class='type'>(<tt>Proc</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>block to yield</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+22
+23
+24
+25</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 22</span>
+
+<span class='kw'>def</span> <span class='id path'>path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='id p'>p</span> <span class='op'>=</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>1</span><span class='comma'>,</span> <span class='id p'>p</span><span class='period'>.</span><span class='id size'>size</span><span class='rbracket'>]</span> <span class='kw'>if</span> <span class='id p'>p</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='CHAR'>?/</span>
+  <span class='id part'>part</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\/</span><span class='embexpr_beg'>#{</span><span class='const'>Regexp</span><span class='period'>.</span><span class='id quote'>quote</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span><span class='rbrace'>}</span><span class='tstring_content'>(\/?$)?</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="post-instance_method">
+  
+    - (<tt>Object</tt>) <strong>post</strong>(path = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Respond to a POST request and yield the block.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id post'>post</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+143
+144
+145</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 143</span>
+
+<span class='kw'>def</span> <span class='id post'>post</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>POST</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="put-instance_method">
+  
+    - (<tt>Object</tt>) <strong>put</strong>(path = nil) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Respond to a PUT request and yield the block.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id put'>put</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+153
+154
+155</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 153</span>
+
+<span class='kw'>def</span> <span class='id put'>put</span><span class='lparen'>(</span><span class='id path'>path</span> <span class='op'>=</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+  <span class='id request_method'>request_method</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PUT</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='id path'>path</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='kw'>yield</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="query-instance_method">
+  
+    - (<tt>Object</tt>) <strong>query</strong>(q, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match variables within the query string.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id query'>query</span><span class='lparen'>(</span><span class='symbol'>:key</span> <span class='op'>=&gt;</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>value</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>hello world</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id query'>query</span><span class='lparen'>(</span><span class='symbol'>:key</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id val'>val</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>key is </span><span class='embexpr_beg'>#{</span><span class='id val'>val</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>q</span>
+      
+      
+        <span class='type'>(<tt>Array</tt>, <tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Either an array or hash of things to match query string variables. If given
+an array, if you pass the values for each key as parameters to the block given.
+If given a hash, then every value must be able to #=== match each value in the query
+parameters for each key in the hash.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195
+196
+197
+198</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 192</span>
+
+<span class='kw'>def</span> <span class='id query'>query</span><span class='lparen'>(</span><span class='id q'>q</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='kw'>case</span> <span class='id q'>q</span>
+  <span class='kw'>when</span> <span class='const'>Hash</span>  <span class='kw'>then</span> <span class='id q'>q</span><span class='period'>.</span><span class='id any?'>any?</span> <span class='lbrace'>{</span><span class='op'>|</span><span class='id k'>k</span><span class='comma'>,</span><span class='id v'>v</span><span class='op'>|</span> <span class='op'>!</span><span class='lparen'>(</span><span class='id v'>v</span> <span class='op'>===</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='id k'>k</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='rbrace'>}</span> <span class='op'>?</span> <span class='kw'>return</span> <span class='op'>:</span> <span class='kw'>yield</span>
+  <span class='kw'>when</span> <span class='const'>Array</span> <span class='kw'>then</span> <span class='kw'>yield</span> <span class='op'>*</span><span class='id q'>q</span><span class='period'>.</span><span class='id map'>map</span><span class='lbrace'>{</span><span class='op'>|</span><span class='id qk'>qk</span><span class='op'>|</span> <span class='id request'>request</span><span class='lbracket'>[</span><span class='id qk'>qk</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='rbracket'>]</span> <span class='kw'>or</span> <span class='kw'>return</span> <span class='rbrace'>}</span>
+  <span class='kw'>else</span>            <span class='id query'>query</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id q'>q</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="query_string-instance_method">
+  
+    - (<tt>Object</tt>) <strong>query_string</strong>(qs) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Yield block if the query string matches.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id path'>path</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>test</span><span class='tstring_end'>'</span></span> <span class='kw'>do</span>
+  <span class='id query_string'>query_string</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>foo=bar</span><span class='tstring_end'>'</span></span> <span class='kw'>do</span>
+    <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>matched</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span>
+<span class='const'>GET</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='regexp_end'>test?foo=bar #=&gt; 'matched'</span></span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>qs</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The query string to match.</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214
+215
+216</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 214</span>
+
+<span class='kw'>def</span> <span class='id query_string'>query_string</span><span class='lparen'>(</span><span class='id qs'>qs</span><span class='rparen'>)</span>
+  <span class='kw'>yield</span> <span class='kw'>if</span> <span class='id qs'>qs</span> <span class='op'>===</span> <span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>QUERY_STRING</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="remainder-instance_method">
+  
+    - (<tt>Object</tt>) <strong>remainder</strong> 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='catchall-instance_method'>catchall</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match any remaining path.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id remainder'>remainder</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id path'>path</span><span class='op'>|</span> <span class='id halt'>halt</span> <span class='lbracket'>[</span><span class='int'>200</span><span class='comma'>,</span> <span class='lbrace'>{</span><span class='rbrace'>}</span><span class='comma'>,</span> <span class='id path'>path</span><span class='rbracket'>]</span> <span class='rbrace'>}</span></pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+122
+123
+124</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 122</span>
+
+<span class='kw'>def</span> <span class='id remainder'>remainder</span>
+  <span class='id with_path_part'>with_path_part</span><span class='lparen'>(</span><span class='id env'>env</span><span class='lbracket'>[</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>PATH_INFO</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='op'>|</span><span class='id var'>var</span><span class='op'>|</span> <span class='kw'>yield</span> <span class='id var'>var</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="variable-instance_method">
+  
+    - (<tt>Object</tt>) <strong>variable</strong>(*args, &amp;blk) 
+  
+
+  
+    <span class="aliases">Also known as:
+    <span class="names"><span id='var-instance_method'>var</span></span>
+    </span>
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Match parts off the path as variables.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code">path '/' do
+  variable { |id| halt [200, {}, id }
+end
+GET /hey  #=&gt; [200, {}, 'hey']
+
+path '/test' do
+  variable { |foo, bar| halt [200, {}, &quot;#{foo}-#{bar}&quot;] }
+end
+GET /test/hey/there  #=&gt; [200, {}, 'hey-there']</pre>
+    
+  </div>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+62
+63
+64
+65
+66</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 62</span>
+
+<span class='kw'>def</span> <span class='id variable'>variable</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='id args'>args</span> <span class='op'>&lt;&lt;</span> <span class='lbrace'>{</span><span class='rbrace'>}</span> <span class='kw'>unless</span> <span class='id args'>args</span><span class='period'>.</span><span class='id last'>last</span><span class='period'>.</span><span class='id is_a?'>is_a?</span><span class='lparen'>(</span><span class='const'>Hash</span><span class='rparen'>)</span>
+  <span class='id args'>args</span><span class='period'>.</span><span class='id last'>last</span><span class='lbracket'>[</span><span class='symbol'>:prepend</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>/</span><span class='tstring_end'>'</span></span>
+  <span class='id partial_variable'>partial_variable</span><span class='lparen'>(</span><span class='op'>*</span><span class='id args'>args</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="whole_path-instance_method">
+  
+    - (<tt>Object</tt>) <strong>whole_path</strong>(p, &amp;blk) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Like #path, but requires the entire path to be consumed.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#path-instance_method" title="Renee::Core::Application::Routing#path (method)">#path</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/renee-core/application/routing.rb', line 29</span>
+
+<span class='kw'>def</span> <span class='id whole_path'>whole_path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='comma'>,</span> <span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span>
+  <span class='id path'>path</span><span class='lparen'>(</span><span class='id p'>p</span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id complete'>complete</span><span class='lparen'>(</span><span class='op'>&amp;</span><span class='id blk'>blk</span><span class='rparen'>)</span> <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Oct 14 18:23:57 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

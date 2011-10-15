@@ -1,0 +1,341 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>Renee Core</h1>
+
+<h2>Routing</h2>
+
+<p>Routing in <code>Renee</code> is different from any web framework you are likely to have used in the past. The syntax is most familiar to Sinatra but allows
+for far more flexibility and freedom in the way that routes and actions are defined. In a Renee, routes are defined using the <code>path</code>, <code>var</code>, <code>query_string</code>, <code>extension</code>, <code>remainder</code> and request methods.</p>
+
+<p><strong>Request Methods</strong></p>
+
+<p>The bread and butter of Renee are the request verbs reminiscent of Sinatra:</p>
+
+<p><code>ruby
+run Renee::Core.new {
+  get    { halt "a get!"  }
+  post   { halt "a post!" }
+  put    { halt "a put!"  }
+  delete { halt "a delete!" }
+}
+</code></p>
+
+<p>These will declare the response to "/" for each of the common request types. Notice the use of the request method to
+specify the http verb and the use of <code>halt</code> inside the block to send back the body of the response.</p>
+
+<p><strong>Path</strong></p>
+
+<p>Path is how Renee describes the basic uri path for a route:</p>
+
+<p><code>ruby
+run Renee::Core.new {
+  path('blog') { ... }
+}
+</code></p>
+
+<p>All declarations inside that block will start with <code>/blog</code>. Paths can also be nested within one another:</p>
+
+<p>```ruby
+run Renee::Core.new {
+  path('blog') {</p>
+
+<pre class="code"><span class='id path'>path</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>foo</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='id get'>get</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>path is /blog/foo</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span> <span class='rbrace'>}</span>
+</pre>
+
+<p>  }
+}
+```</p>
+
+<p>You can also use <code>exact_path</code> for more precise path matching and/or <code>part</code> which doesn't look for leading slashes.</p>
+
+<p><strong>Query String</strong></p>
+
+<p>In addition to defining paths, you may find yourself wanting to describe the state of the query string for a request within the path:</p>
+
+<p>```ruby
+path 'foo' do
+  query_string 'bar' do</p>
+
+<pre class="code"><span class='id get'>get</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BAR!</span><span class='tstring_end'>'</span></span> <span class='rbrace'>}</span>
+</pre>
+
+<p>  end</p>
+
+<p>  query_string 'baz' do</p>
+
+<pre class="code"><span class='id get'>get</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>BAZ!</span><span class='tstring_end'>'</span></span> <span class='rbrace'>}</span>
+</pre>
+
+<p>  end
+end
+```</p>
+
+<p>This will respond to <code>/foo?bar</code> with "BAR!" and <code>/foo?baz</code> with "BAZ!". You can also specify query_string in a variety of other ways:</p>
+
+<p>```ruby</p>
+
+<h1>Check key and value of query param</h1>
+
+<p>query_string 'foo=bar' do
+  post { halt [200,{},'foo'] }
+end</p>
+
+<h1>Declare query params as a hash</h1>
+
+<p>query :foo => "bar" do
+  halt 200
+end</p>
+
+<h1>Switch based on a query parameter</h1>
+
+<p>query :foo do |var|
+  case var
+  when 'bar' then halt 200
+  when 'bar2' then halt 500
+  end
+end
+```</p>
+
+<p><strong>Variables</strong></p>
+
+<p>In Renee, you specify parameters for your request as explicit variables. Variables are declared like this:</p>
+
+<p><code>ruby
+path('blog') {
+  var { |id| get { halt "path is /blog/#{id}" } }
+}
+</code></p>
+
+<p>You can access the variables (passed into the request) using the local variables yielded to the block. Variables are a powerful
+way to express expected parameters for a given set of requests. You can specify variables that match a regex:</p>
+
+<p><code>ruby
+path('blog') {
+  var(/\d+/) { |id| get { halt "path is /blog/#{id}" } }
+}
+</code></p>
+
+<p>and even explicitly cast your variable types:</p>
+
+<p>```ruby
+path('blog') {
+  var :type => Integer do |id|</p>
+
+<pre class="code"><span class='id get'>get</span> <span class='lbrace'>{</span> <span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>path is /blog/</span><span class='embexpr_beg'>#{</span><span class='id id'>id</span><span class='rbrace'>}</span><span class='tstring_content'> and id is an integer</span><span class='tstring_end'>&quot;</span></span> <span class='rbrace'>}</span>
+</pre>
+
+<p>  end
+end
+```</p>
+
+<p><strong>Extensions</strong></p>
+
+<p>You can also use <code>extension</code> as a way to define formats:</p>
+
+<p>```ruby
+path '/test' do
+  extension 'html' do</p>
+
+<pre class="code"><span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>html</span><span class='tstring_end'>'</span></span>
+</pre>
+
+<p>  end
+  extension 'json' do</p>
+
+<pre class="code"><span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>json</span><span class='tstring_end'>'</span></span>
+</pre>
+
+<p>  end
+end
+```</p>
+
+<p>This will have <code>test.html</code> respond with 'html' and <code>test.json</code> respond with 'json'.</p>
+
+<p><strong>Remainder</strong></p>
+
+<p>In the event that no route has been matched, the <code>remainder</code> keyword makes defining the else case rather easy:</p>
+
+<p>```ruby
+path 'foo' do
+  path 'bar' do</p>
+
+<pre class="code"><span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>BAR!</span><span class='tstring_end'>&quot;</span></span>
+</pre>
+
+<p>  end</p>
+
+<p>  remainder do |rest|</p>
+
+<pre class="code"><span class='id halt'>halt</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Rest was </span><span class='embexpr_beg'>#{</span><span class='id rest'>rest</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+</pre>
+
+<p>  end
+end
+```</p>
+
+<p>Notice this allows you to handle the cases within a particular route scope and manage them based on the "rest" of the uri yielded in the <code>remainder</code> block. You
+can handle different remainders in all the different path blocks.</p>
+
+<p><strong>Named Routes</strong></p>
+
+<p>Once you have defined your routes, you can then "register" a particular path mapping that to a symbol. This is useful for referencing routes without
+having to specify the entire path:</p>
+
+<p><code>ruby
+run Renee::Core.new {
+  register(:test, '/test/time')
+  register(:test_var, '/test/:id')
+}
+</code></p>
+
+<p>You can then access these using the <code>path</code> method in a route or template:</p>
+
+<p><code>ruby
+path(:test) # =&gt; '/test/time'
+path(:test_var, :id =&gt; 123) # =&gt; '/test/123'
+</code></p>
+
+<p>Using named routes makes referencing and modifying routes within an application much simpler to manage.</p>
+
+<h2>Responding</h2>
+
+<p>Responding to a request within a route can be managed with the <code>respond</code>, <code>halt</code>, <code>redirect</code> commands:</p>
+
+<p><strong>Respond</strong></p>
+
+<p>The <code>respond</code> command makes returning a rack response very explicit, you can respond as if you were constructing a Rack::Response</p>
+
+<p><code>ruby
+run Renee {
+  get { respond!("hello!", 403, "foo" =&gt; "bar") }
+}
+</code></p>
+
+<p>or use the block DSL for convenience:</p>
+
+<p><code>ruby
+run Renee {
+  get { respond! { status 403; headers :foo =&gt; "bar"; body "hello!" } }
+}
+</code></p>
+
+<p><strong>Halt</strong></p>
+
+<p>Halting is the easiest way to render data within a route:</p>
+
+<p><code>ruby
+run Renee::Core.new {
+  get { halt 'easy' }
+}
+</code></p>
+
+<p>This will return a 200 status code and 'easy' as the body. You can also specify status code and header explicitly in the halt response:</p>
+
+<p><code>ruby
+get { halt [200, {}, 'body'] }
+</code></p>
+
+<p>This will set the status code to 200, pass no headers and return 'body'. You can also use several variations of halt:</p>
+
+<p>```ruby</p>
+
+<h1>Return just status code</h1>
+
+<p>halt 200</p>
+
+<h1>Return status with symbol</h1>
+
+<p>halt :not_found</p>
+
+<h1>Return 200 with body</h1>
+
+<p>halt "hello!"</p>
+
+<h1>Return 500 with body</h1>
+
+<p>halt 500, "hello!"
+```</p>
+
+<p>Halt is the most straightforward way to control the response for a request.</p>
+
+<p><strong>Redirect</strong></p>
+
+<p>A redirect is a common action within a web route and can be achieved with the convenience method <code>redirect</code> command:</p>
+
+<p><code>ruby
+get {
+  halt redirect('/hello')
+}
+</code></p>
+
+<p>You can also specify the status code for the redirect:</p>
+
+<p><code>ruby
+get {
+  halt redirect('/hello', 303)
+}
+</code></p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Fri Oct 14 18:23:56 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

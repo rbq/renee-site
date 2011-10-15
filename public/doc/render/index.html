@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Renee
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>Renee Render</h1>
+
+<p>Rendering templates in Renee should be familiar and intuitive using the <code>render</code> command:</p>
+
+<p><code>ruby
+run Renee::Core.new {
+ path('blog') do
+   get { render! :haml, :"blogs/index" }
+ end
+}
+</code></p>
+
+<p>This above is the standard render syntax, specifying the engine followed by the template. You can also render without specifying an engine:</p>
+
+<p><code>ruby
+path('blog') do
+  get { render! "blogs/index" }
+end
+</code></p>
+
+<p>This will do a lookup in the views path to find the appropriately named template. You can also pass locals and layout options as you would expect:</p>
+
+<p><code>ruby
+path('blog') do
+  get { render! "blogs/index", :locals =&gt; { :foo =&gt; "bar" }, :layout =&gt; :bar }
+end
+</code></p>
+
+<p>This will render the "blogs/index.erb" file if it exists, passing the 'foo' local variable
+and wrapping the result in the 'bar.erb' layout file. You can also render without returning the response by using:</p>
+
+<p><code>ruby
+path('blog') do
+  get { render "blogs/index" }
+end
+</code></p>
+
+<p>This allows you to render the content as a string without immediately responding.</p>
+</div></div>
+    
+    <div id="footer">
+  Generated on Fri Oct 14 18:23:58 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.2 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

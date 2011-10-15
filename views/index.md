@@ -47,11 +47,11 @@ out detailed guides for each below:
 
 ## API documentation
 
-[&#8618; renee](http://rubydoc.info/github/renee/renee) http://rubydoc.info/github/reneey/renee
+[&#8618; renee](/doc/meta/index.html)
 
-[&#8618; renee-core](http://rubydoc.info/github/renee/renee-core) http://rubydoc.info/github/reneey/renee-core
+[&#8618; renee-core](/doc/core/index.html)
 
-[&#8618; renee-render](http://rubydoc.info/github/renee/renee-render) http://rubydoc.info/github/reneey/renee-render
+[&#8618; renee-render](/doc/render/index.html)
 
 ## Development
 
