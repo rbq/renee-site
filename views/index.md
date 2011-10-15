@@ -12,13 +12,14 @@ This site was been built using Renee and is [available on Github](https://github
 ## Concept (Why Renee?)
 
 Renee is a new Rack-based library for expressing web applications. It seamlessly integrates with Rack to
-let you mix and match with any other framework. Sinatra delivered a new simple way to think about
-building web applications. The popularity of Sinatra both as a library and as a concept shows how enduring the
-concept really has been.
+let you mix and match with any other framework. [Josh Hull](https://github.com/joshbuddy) thought this up
+when he started working on a new routing DSL for [Goliath](http://postrank-labs.github.com/goliath).
 
+For us, Sinatra delivered a new and simpler way to think about building web applications.
+The popularity of Sinatra both as a library and as a concept shows how enduring this shift has been.
 Sinatra was different from Rails because the DSL was lightweight, easy to read and
-combined routing and actions into one file. Still, let's consider an example from Sinatra to see where
-we can do better.
+combined routing and actions into just one file. We wondered though, as Sinatra fans,
+if we were to come up with a cleaner and more powerful DSL, what might that look like?
 
 [&#8618; Read more](/concept)
 
