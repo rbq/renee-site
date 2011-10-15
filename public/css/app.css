@@ -1,0 +1,79 @@
+body {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-image: url('/img/vospit.jpeg');
+  font-family: Arial, Verdana;
+}
+
+body .container {
+  min-width: 500px;
+  background: #FCEA97;
+  border-style: solid;
+  border-width: 5px;
+  border-color: #FFC003;
+  border-radius: 15px;
+  padding: 2em;
+  margin-top: 2em;
+}
+
+h1 {
+  color: #1C1C19;
+}
+
+h2 {
+  color: #FFA000;
+}
+
+a {
+  text-decoration: none;
+  color: #A60202;
+}
+
+pre.CodeRay {
+  border: 1px black solid;
+  background-color: #1C1C19;
+  color: white;
+  padding: 5px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
+pre.CodeRay .string {
+  color: #FFC003;
+}
+
+pre.CodeRay .constant {
+  color: #A60202;
+}
+
+pre.CodeRay .instance-variable {
+  color: #FCEA97;
+  
+}
+
+pre.CodeRay .keyword {
+  color: #dd7;
+}
+
+pre.CodeRay .symbol {
+  color: #f77;
+}
+
+pre.CodeRay .integer {
+  color: #f77;
+  
+}
+
+pre.CodeRay .comment {
+  color: #777;
+  
+}
+
+pre.CodeRay .comment {
+  color: #8D1D19;
+  
+}
+
+div.logo {
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %title Renee #{title_part}
+    %link{ :href => "/css/app.css", :rel => "stylesheet" }
+  %body
+    %a{ :href => "https://github.com/renee-project/renee" }
+      %img{ :src => '/img/russiangithub.png', :style => 'position: absolute; top: 0; left: 0; border: 0;'}
+    .container
+      .logo
+        %a{ :href => "/" }
+          %img{ :src => "/img/reneeclean.png", :title => 'IN COMMUNIST RUSSIA, RENEE FRAMEWORK WORK FOR YOU'}
+      = preserve(yield)
