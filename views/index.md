@@ -56,10 +56,10 @@ out detailed guides for each below:
 ## Development
 
 Renee's structure is pretty simple so far. The basic Rack DSL is contained in
-[renee-core](http://github.com/reneey/renee/renee-core). This gem has no other dependencies other than Rack.
+[renee-core](https://github.com/renee-project/renee/tree/master/renee-core). This gem has no other dependencies other than Rack.
 
-The rendering side is in [renee-render](http://github.com/reneey/renee/renee-render),
+The rendering side is in [renee-render](https://github.com/renee-project/renee/tree/master/renee-render),
 which depends on [Tilt](https://github.com/rtomayko/tilt).
 
-The kitchen-sink gem which incorporates all of the others is [renee](http://github.com/reneey/renee/renee).
+The kitchen-sink gem which incorporates all of the others is [renee](https://github.com/renee-project/renee/tree/master/renee).
 Please, any bugs, any ideas, I'd love to hear any of it. Love, [Team Renee](/team-renee). &hearts;
