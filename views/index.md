@@ -49,8 +49,25 @@ Renee has (hopefully) a small number of keywords divided between several compone
 
 ## Usage
 
-Using Renee is as simple as understanding how to *configure settings*, *define routes*, and *respond to requests*, check
-out detailed guides for each below:
+Using Renee is as simple as understanding how to *configure settings*, *define routes*, and *respond to requests*.
+Renee usage in a nutshell:
+
+    :::ruby
+    run Renee {
+      path 'blog' do
+        get  { render! "posts/index" }
+        post { Blog.create(request.params); halt :created }
+        var do |id|
+          @blog = Blog.get(id)
+          get { render! "posts/show" }
+          put { @blog.update(request.params); halt :ok }
+        end
+      end
+    }.setup {
+      views_path "./views"
+    }
+
+Check out detailed guides for each aspect below:
 
 [&#8618; Read about Configuration](/settings)
 
@@ -61,6 +78,8 @@ out detailed guides for each below:
 [&#8618; Read about Route generation](/route-generation)
 
 ## API documentation
+
+Renee is also well-documented with YARD:
 
 [&#8618; renee](/doc/meta/index.html)
 
