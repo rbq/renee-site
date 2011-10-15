@@ -21,9 +21,7 @@ Sinatra was different from Rails because the DSL was lightweight, easy to read a
 combined routing and actions into just one file.
 
 We wondered though, as Sinatra fans, if we were to come up with a cleaner and more powerful DSL, what might that look like?
-Let's consider an example from Sinatra to see where we can improve upon this.
-
-Consider:
+Let's consider an example from Sinatra to see where we can do better:
 
     :::ruby
     get '/blog/:id' do
