@@ -4,10 +4,10 @@ Configuration in Renee is simply using the `#setup` command to set
 the appropriate options within a Renee application:
 
     :::ruby
-    Renee { ... }.setup {
+    Renee { ... }.setup do
       views_path "./views"
       include Some::Module
-    }
+    end
 
 The available configuration options are:
 

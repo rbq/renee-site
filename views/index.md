@@ -18,9 +18,16 @@ let you mix and match with any other framework.
 
 ### Installation
 
-Installation is gem based, and couldn't be simpler!
+Renee is gem-based. If you're using rubygems, you can simply:
 
-[&#8618; Read more](/installation)
+    $> gem install renee
+
+If you're using [Bundler](http://gembundler.com/), you can add
+
+    :::ruby
+    gem 'renee', '~> 0.0.1'
+
+to your `Gemfile`.
 
 ### Overview
 
