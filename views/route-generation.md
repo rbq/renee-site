@@ -19,7 +19,7 @@ This also allows for named variables in the path:
     app.path(:path, 123)        # Would return '/path/123'
     app.path(:path, :id => 123) # This would also return '/path/123'
 
-If you have default values for variables, you can pass them in on the `#regsiter` call:
+If you have default values for variables, you can pass them in on the `#register` call:
 
     :::ruby
     app = Renee.new
